@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,181 +6,337 @@
 <title>Manohar Shetty | Lead DevOps Engineer</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+    scroll-behavior:smooth;
+    font-family:Segoe UI, sans-serif;
 }
 
 body{
-    background:#0f172a;
+    background:#07142d;
     color:white;
-    line-height:1.6;
+    line-height:1.7;
 }
 
-header{
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#0b1b3d;
+    padding:15px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+.logo{
+    font-size:22px;
+    font-weight:bold;
+    color:#4ea1ff;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#4ea1ff;
+}
+
+/* HOME */
+
+#home{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
-    padding:80px 20px;
-    background:#111827;
+    padding:50px;
 }
 
-header h1{
-    font-size:3rem;
+#home h1{
+    font-size:70px;
 }
 
-header p{
-    color:#94a3b8;
+#home h2{
     margin-top:10px;
 }
 
+#home p{
+    margin-top:15px;
+    color:#c9d5e8;
+}
+
 .btn{
+    margin-top:30px;
     display:inline-block;
-    margin-top:20px;
-    padding:12px 24px;
+    padding:12px 28px;
     background:#2563eb;
+    border-radius:8px;
     color:white;
     text-decoration:none;
-    border-radius:8px;
 }
+
+/* SECTIONS */
 
 section{
-    max-width:1100px;
-    margin:auto;
-    padding:60px 20px;
+    padding:100px 10%;
 }
 
-h2{
-    margin-bottom:20px;
-    color:#60a5fa;
+.section-title{
+    color:#4ea1ff;
+    margin-bottom:30px;
+    font-size:35px;
 }
 
-.skills{
+.card-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:15px;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
 }
 
 .card{
-    background:#1e293b;
+    background:#10254f;
     padding:20px;
-    border-radius:10px;
+    border-radius:12px;
+    transition:.3s;
 }
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+/* EXPERIENCE */
 
 .timeline{
     border-left:3px solid #2563eb;
-    padding-left:20px;
+    padding-left:25px;
 }
 
 .job{
-    margin-bottom:30px;
+    margin-bottom:40px;
 }
 
-footer{
-    text-align:center;
-    padding:30px;
-    background:#111827;
+.job h3{
+    color:#4ea1ff;
 }
+
+/* FOOTER */
+
+footer{
+    background:#0b1b3d;
+    text-align:center;
+    padding:25px;
+}
+
+@media(max-width:768px){
+
+nav{
+    flex-direction:column;
+    gap:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+#home h1{
+    font-size:42px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Manohar Shetty</h1>
-    <h3>Lead DevOps Engineer</h3>
-    <p>Kubernetes | OpenShift | OpenStack | AWS | Terraform | Ansible</p>
+<nav>
 
-    <a class="btn" href="mailto:manohar.shetty507@gmail.com">
-        Contact Me
-    </a>
-</header>
+<div class="logo">Manohar Shetty</div>
 
-<section>
-    <h2>About Me</h2>
-    <p>
-        DevOps Engineer with 8+ years of IT experience specializing in
-        Kubernetes, OpenShift, OpenStack, Cloud Infrastructure,
-        Automation, CI/CD, Observability and Infrastructure as Code.
-    </p>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#experience">Experience</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#certifications">Certifications</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<section id="home">
+
+<h1>Manohar Shetty</h1>
+
+<h2>Lead DevOps Engineer</h2>
+
+<p>
+Kubernetes | OpenShift | OpenStack | AWS | Terraform | Ansible
+</p>
+
+<a href="#about" class="btn">Explore Portfolio</a>
+
 </section>
 
-<section>
-    <h2>Core Skills</h2>
+<section id="about">
 
-    <div class="skills">
-        <div class="card">Kubernetes & OpenShift</div>
-        <div class="card">AWS & GCP</div>
-        <div class="card">OpenStack</div>
-        <div class="card">Terraform</div>
-        <div class="card">Ansible</div>
-        <div class="card">Jenkins & GitHub Actions</div>
-        <div class="card">Prometheus & Grafana</div>
-        <div class="card">Linux Administration</div>
-    </div>
+<h2 class="section-title">About Me</h2>
+
+<p>
+Lead DevOps Engineer with 8+ years of IT experience specializing in
+Kubernetes, OpenShift, OpenStack, Cloud Infrastructure,
+Automation, Observability, Infrastructure as Code, and Platform Engineering.
+Experienced in managing large-scale Kubernetes environments,
+OpenShift deployments, OpenStack clouds, CI/CD pipelines,
+and enterprise production workloads.
+</p>
+
 </section>
 
-<section>
-    <h2>Certifications</h2>
+<section id="skills">
 
-    <ul>
-        <li>Certified Kubernetes Administrator (CKA)</li>
-        <li>Certified Kubernetes Security Specialist (CKS)</li>
-        <li>Prometheus Certified Associate (PCA)</li>
-        <li>AWS Solutions Architect Associate</li>
-        <li>Azure AZ-900</li>
-    </ul>
+<h2 class="section-title">Core Skills</h2>
+
+<div class="card-container">
+
+<div class="card">Kubernetes</div>
+<div class="card">OpenShift</div>
+<div class="card">OpenStack</div>
+<div class="card">AWS</div>
+<div class="card">GCP</div>
+<div class="card">Terraform</div>
+<div class="card">Ansible</div>
+<div class="card">Jenkins</div>
+<div class="card">GitHub Actions</div>
+<div class="card">Prometheus</div>
+<div class="card">Grafana</div>
+<div class="card">Linux Administration</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Experience</h2>
+<section id="experience">
 
-    <div class="timeline">
+<h2 class="section-title">Experience</h2>
 
-        <div class="job">
-            <h3>Vodafone Intelligent Services</h3>
-            <p>Lead DevOps Engineer | 2025 - Present</p>
-        </div>
+<div class="timeline">
 
-        <div class="job">
-            <h3>Akamai Technologies</h3>
-            <p>Cloud Operations Architect</p>
-        </div>
+<div class="job">
+<h3>Vodafone Intelligent Services</h3>
+<p>Lead DevOps Engineer | 2025 - Present</p>
+<p>
+OpenStack migration, OpenShift deployments, KVM virtualization,
+Terraform automation, Grafana observability, production operations.
+</p>
+</div>
 
-        <div class="job">
-            <h3>Flipkart</h3>
-            <p>DevOps Engineer</p>
-        </div>
+<div class="job">
+<h3>Akamai Technologies</h3>
+<p>Cloud Operations Architect</p>
+</div>
 
-        <div class="job">
-            <h3>IBM India</h3>
-            <p>Infrastructure Specialist</p>
-        </div>
+<div class="job">
+<h3>Flipkart</h3>
+<p>DevOps Engineer</p>
+<p>
+Managed 18+ Kubernetes clusters with 18,000+ nodes.
+</p>
+</div>
 
-    </div>
+<div class="job">
+<h3>IBM India</h3>
+<p>Infrastructure Specialist</p>
+</div>
+
+<div class="job">
+<h3>Frontier Business Systems</h3>
+<p>DevOps Engineer</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Featured Projects</h2>
+<section id="projects">
 
-    <ul>
-        <li>OpenStack to OpenShift Migration</li>
-        <li>18,000+ Node Kubernetes Platform</li>
-        <li>Enterprise Observability Platform</li>
-        <li>Infrastructure Automation using Terraform & Ansible</li>
-    </ul>
+<h2 class="section-title">Projects</h2>
+
+<div class="card-container">
+
+<div class="card">
+<h3>OpenStack to OpenShift Migration</h3>
+<p>Migration of workloads from VM-based infrastructure to cloud-native environments.</p>
+</div>
+
+<div class="card">
+<h3>18,000+ Node Kubernetes Platform</h3>
+<p>Large-scale Kubernetes operations and lifecycle management.</p>
+</div>
+
+<div class="card">
+<h3>Enterprise Observability Platform</h3>
+<p>Grafana dashboards, Prometheus alerting, monitoring automation.</p>
+</div>
+
+<div class="card">
+<h3>Infrastructure as Code</h3>
+<p>Terraform and Ansible-based provisioning and automation.</p>
+</div>
+
+</div>
+
 </section>
 
-<section>
-    <h2>Contact</h2>
+<section id="certifications">
 
-    <p>Email: manohar.shetty507@gmail.com</p>
-    <p>GitHub: Manohar-1305</p>
-    <p>LinkedIn: manohar-shetty507</p>
+<h2 class="section-title">Certifications</h2>
+
+<ul>
+<li>Certified Kubernetes Administrator (CKA)</li>
+<li>Certified Kubernetes Security Specialist (CKS)</li>
+<li>Prometheus Certified Associate (PCA)</li>
+<li>AWS Solutions Architect Associate</li>
+<li>Azure AZ-900</li>
+<li>GitOps Certified</li>
+</ul>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact</h2>
+
+<p>Email: manohar.shetty507@gmail.com</p>
+<p>GitHub: https://github.com/Manohar-1305</p>
+<p>LinkedIn: https://linkedin.com/in/manohar-shetty507</p>
+
 </section>
 
 <footer>
-    © 2026 Manohar Shetty | DevOps Engineer
+
+<p>© 2026 Manohar Shetty | Lead DevOps Engineer</p>
+
 </footer>
 
 </body>
