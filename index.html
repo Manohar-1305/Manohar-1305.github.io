@@ -4,341 +4,245 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Manohar Pinnamshetty | Lead DevOps Engineer</title>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-    font-family:Segoe UI, sans-serif;
+:root{
+  --bg:#ffffff;
+  --bg-secondary:#f5f5f3;
+  --text-primary:#1a1a1a;
+  --text-secondary:#555550;
+  --text-tertiary:#999990;
+  --border:#e0dfd8;
+  --border-hover:#c0bfb8;
+  --info-bg:#e6f1fb;
+  --info-text:#185fa5;
+  --radius-md:8px;
+  --radius-lg:12px;
+}
+
+@media(prefers-color-scheme:dark){
+  :root{
+    --bg:#1a1a1a;
+    --bg-secondary:#242424;
+    --text-primary:#f0efe8;
+    --text-secondary:#aaa9a0;
+    --text-tertiary:#666660;
+    --border:#333330;
+    --border-hover:#555550;
+    --info-bg:#0c447c;
+    --info-text:#b5d4f4;
+  }
 }
 
 body{
-    background:#07142d;
-    color:white;
-    line-height:1.7;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  background:var(--bg);
+  color:var(--text-primary);
+  line-height:1.7;
 }
 
-/* NAVBAR */
+a{color:inherit;text-decoration:none;}
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    background:#0b1b3d;
-    padding:15px 50px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.4);
-}
+.port{max-width:860px;margin:0 auto;padding:0 1.5rem 4rem;}
 
-.logo{
-    font-size:22px;
-    font-weight:bold;
-    color:#4ea1ff;
-}
-
-nav ul{
-    list-style:none;
-    display:flex;
-    gap:25px;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    transition:.3s;
-}
-
-nav a:hover{
-    color:#4ea1ff;
-}
-
-/* HOME */
-
-#home{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:50px;
-}
-
-#home h1{
-    font-size:70px;
-}
-
-#home h2{
-    margin-top:10px;
-}
-
-#home p{
-    margin-top:15px;
-    color:#c9d5e8;
-}
-
-.btn{
-    margin-top:30px;
-    display:inline-block;
-    padding:12px 28px;
-    background:#2563eb;
-    border-radius:8px;
-    color:white;
-    text-decoration:none;
-}
+/* HERO */
+.hero{text-align:center;padding:3.5rem 1rem 2.5rem;border-bottom:0.5px solid var(--border);}
+.avatar{width:64px;height:64px;border-radius:50%;background:var(--info-bg);display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:500;color:var(--info-text);margin:0 auto 18px;}
+.hero-name{font-size:34px;font-weight:500;letter-spacing:-0.5px;}
+.hero-title{font-size:16px;color:var(--text-secondary);margin-top:6px;}
+.hero-tags{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;}
+.tag{font-size:12px;padding:4px 12px;border-radius:999px;background:var(--bg-secondary);border:0.5px solid var(--border);color:var(--text-secondary);}
+.hero-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.hero-links a{display:flex;align-items:center;gap:6px;font-size:13px;padding:6px 16px;border:0.5px solid var(--border-hover);border-radius:var(--radius-md);color:var(--text-secondary);transition:background .15s;}
+.hero-links a:hover{background:var(--bg-secondary);}
+.hero-links i{font-size:16px;}
 
 /* SECTIONS */
+.section{padding:2.5rem 0;border-bottom:0.5px solid var(--border);}
+.section:last-child{border-bottom:none;}
+.sec-label{font-size:11px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text-tertiary);margin-bottom:1.25rem;}
 
-section{
-    padding:100px 10%;
-}
+/* ABOUT */
+.about-text{font-size:15px;color:var(--text-secondary);max-width:680px;}
 
-.section-title{
-    color:#4ea1ff;
-    margin-bottom:30px;
-    font-size:35px;
-}
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;}
+.skill-chip{background:var(--bg-secondary);border:0.5px solid var(--border);border-radius:var(--radius-md);padding:10px 14px;font-size:13px;color:var(--text-secondary);display:flex;align-items:center;gap:8px;}
+.skill-chip i{font-size:16px;color:var(--text-tertiary);}
 
-.card-container{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
+/* TIMELINE */
+.timeline{display:flex;flex-direction:column;}
+.job{display:grid;grid-template-columns:170px 1fr;gap:0 24px;padding:1.25rem 0;border-bottom:0.5px solid var(--border);}
+.job:last-child{border-bottom:none;}
+.job-meta{font-size:13px;color:var(--text-secondary);padding-top:2px;}
+.job-period{font-size:11px;margin-top:4px;color:var(--text-tertiary);}
+.job-title{font-size:14px;font-weight:500;margin-bottom:5px;}
+.job-desc{font-size:13px;color:var(--text-secondary);}
 
-.card{
-    background:#10254f;
-    padding:20px;
-    border-radius:12px;
-    transition:.3s;
-}
+/* PROJECTS */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+.proj-card{background:var(--bg);border:0.5px solid var(--border);border-radius:var(--radius-lg);padding:1rem 1.25rem;transition:border-color .15s;}
+.proj-card:hover{border-color:var(--border-hover);}
+.proj-icon{font-size:20px;color:var(--text-tertiary);margin-bottom:10px;}
+.proj-title{font-size:14px;font-weight:500;margin-bottom:6px;}
+.proj-desc{font-size:13px;color:var(--text-secondary);}
 
-.card:hover{
-    transform:translateY(-5px);
-}
+/* CERTS */
+.cert-list{display:flex;flex-direction:column;gap:10px;}
+.cert-item{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}
+.cert-item i{font-size:16px;color:var(--text-tertiary);width:20px;}
 
-/* EXPERIENCE */
-
-.timeline{
-    border-left:3px solid #2563eb;
-    padding-left:25px;
-}
-
-.job{
-    margin-bottom:40px;
-}
-
-.job h3{
-    color:#4ea1ff;
-}
+/* CONTACT */
+.contact-row{display:flex;flex-direction:column;gap:10px;}
+.contact-link{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);transition:color .15s;}
+.contact-link:hover{color:var(--text-primary);}
+.contact-link i{font-size:16px;color:var(--text-tertiary);width:20px;}
 
 /* FOOTER */
+footer{text-align:center;padding:2rem;font-size:12px;color:var(--text-tertiary);border-top:0.5px solid var(--border);}
 
-footer{
-    background:#0b1b3d;
-    text-align:center;
-    padding:25px;
+@media(max-width:600px){
+  .job{grid-template-columns:1fr;}
+  .hero-name{font-size:26px;}
 }
-
-@media(max-width:768px){
-
-nav{
-    flex-direction:column;
-    gap:15px;
-}
-
-nav ul{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-#home h1{
-    font-size:42px;
-}
-
-}
-
 </style>
 </head>
-
 <body>
 
-<nav>
+<div class="port">
 
-<div class="logo">Manohar Shetty</div>
+  <div class="hero">
+    <div class="avatar">MP</div>
+    <div class="hero-name">Manohar Pinnamshetty</div>
+    <div class="hero-title">Lead DevOps Engineer · 8+ years</div>
+    <div class="hero-tags">
+      <span class="tag">Kubernetes</span>
+      <span class="tag">OpenShift</span>
+      <span class="tag">OpenStack</span>
+      <span class="tag">AWS</span>
+      <span class="tag">GCP</span>
+      <span class="tag">Terraform</span>
+      <span class="tag">Ansible</span>
+      <span class="tag">Prometheus</span>
+      <span class="tag">Grafana</span>
+    </div>
+    <div class="hero-links">
+      <a href="https://github.com/Manohar-1305"><i class="ti ti-brand-github"></i>GitHub</a>
+      <a href="https://linkedin.com/in/manohar-shetty507"><i class="ti ti-brand-linkedin"></i>LinkedIn</a>
+      <a href="mailto:manohar.shetty507@gmail.com"><i class="ti ti-mail"></i>Email</a>
+    </div>
+  </div>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#certifications">Certifications</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+  <div class="section">
+    <div class="sec-label">About</div>
+    <p class="about-text">Lead DevOps Engineer specializing in Kubernetes, OpenShift, OpenStack, cloud infrastructure, automation, observability, and platform engineering. Experienced managing large-scale Kubernetes environments, OpenShift deployments, OpenStack clouds, CI/CD pipelines, and enterprise production workloads.</p>
+  </div>
 
-</nav>
+  <div class="section">
+    <div class="sec-label">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-chip"><i class="ti ti-topology-star"></i>Kubernetes</div>
+      <div class="skill-chip"><i class="ti ti-server"></i>OpenShift</div>
+      <div class="skill-chip"><i class="ti ti-cloud"></i>OpenStack</div>
+      <div class="skill-chip"><i class="ti ti-brand-aws"></i>AWS</div>
+      <div class="skill-chip"><i class="ti ti-cloud-computing"></i>GCP</div>
+      <div class="skill-chip"><i class="ti ti-settings-automation"></i>Terraform</div>
+      <div class="skill-chip"><i class="ti ti-robot"></i>Ansible</div>
+      <div class="skill-chip"><i class="ti ti-git-branch"></i>Jenkins</div>
+      <div class="skill-chip"><i class="ti ti-brand-github"></i>GitHub Actions</div>
+      <div class="skill-chip"><i class="ti ti-chart-line"></i>Prometheus</div>
+      <div class="skill-chip"><i class="ti ti-dashboard"></i>Grafana</div>
+      <div class="skill-chip"><i class="ti ti-terminal"></i>Linux Admin</div>
+    </div>
+  </div>
 
-<section id="home">
+  <div class="section">
+    <div class="sec-label">Experience</div>
+    <div class="timeline">
+      <div class="job">
+        <div class="job-meta">
+          <div>Vodafone Intelligent Services</div>
+          <div class="job-period">2025 – Present</div>
+        </div>
+        <div>
+          <div class="job-title">Lead DevOps Engineer</div>
+          <div class="job-desc">OpenStack migration, OpenShift deployments, KVM virtualization, Terraform automation, Grafana observability, production operations.</div>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-meta"><div>Akamai Technologies</div></div>
+        <div><div class="job-title">Cloud Operations Architect</div></div>
+      </div>
+      <div class="job">
+        <div class="job-meta"><div>Flipkart</div></div>
+        <div>
+          <div class="job-title">DevOps Engineer</div>
+          <div class="job-desc">Managed 18+ Kubernetes clusters with 18,000+ nodes.</div>
+        </div>
+      </div>
+      <div class="job">
+        <div class="job-meta"><div>IBM India</div></div>
+        <div><div class="job-title">Infrastructure Specialist</div></div>
+      </div>
+      <div class="job">
+        <div class="job-meta"><div>Frontier Business Systems</div></div>
+        <div><div class="job-title">DevOps Engineer</div></div>
+      </div>
+    </div>
+  </div>
 
-<h1>Manohar Shetty</h1>
+  <div class="section">
+    <div class="sec-label">Projects</div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-icon"><i class="ti ti-arrows-transfer-up"></i></div>
+        <div class="proj-title">OpenStack → OpenShift migration</div>
+        <div class="proj-desc">Migration of workloads from VM-based infrastructure to cloud-native environments.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon"><i class="ti ti-topology-star-3"></i></div>
+        <div class="proj-title">18,000-node Kubernetes platform</div>
+        <div class="proj-desc">Large-scale cluster operations and lifecycle management across 18+ clusters.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon"><i class="ti ti-chart-bar"></i></div>
+        <div class="proj-title">Enterprise observability platform</div>
+        <div class="proj-desc">Grafana dashboards, Prometheus alerting, and monitoring automation at scale.</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-icon"><i class="ti ti-code"></i></div>
+        <div class="proj-title">Infrastructure as code</div>
+        <div class="proj-desc">Terraform and Ansible-based provisioning and automation pipelines.</div>
+      </div>
+    </div>
+  </div>
 
-<h2>Lead DevOps Engineer</h2>
+  <div class="section">
+    <div class="sec-label">Certifications</div>
+    <div class="cert-list">
+      <div class="cert-item"><i class="ti ti-certificate"></i>Certified Kubernetes Administrator (CKA)</div>
+      <div class="cert-item"><i class="ti ti-shield-check"></i>Certified Kubernetes Security Specialist (CKS)</div>
+      <div class="cert-item"><i class="ti ti-chart-line"></i>Prometheus Certified Associate (PCA)</div>
+      <div class="cert-item"><i class="ti ti-brand-aws"></i>AWS Solutions Architect Associate</div>
+      <div class="cert-item"><i class="ti ti-brand-azure"></i>Azure AZ-900</div>
+      <div class="cert-item"><i class="ti ti-git-merge"></i>GitOps Certified</div>
+    </div>
+  </div>
 
-<p>
-Kubernetes | OpenShift | OpenStack | AWS | Terraform | Ansible
-</p>
-
-<a href="#about" class="btn">Explore Portfolio</a>
-
-</section>
-
-<section id="about">
-
-<h2 class="section-title">About Me</h2>
-
-<p>
-Lead DevOps Engineer with 8+ years of IT experience specializing in
-Kubernetes, OpenShift, OpenStack, Cloud Infrastructure,
-Automation, Observability, Infrastructure as Code, and Platform Engineering.
-Experienced in managing large-scale Kubernetes environments,
-OpenShift deployments, OpenStack clouds, CI/CD pipelines,
-and enterprise production workloads.
-</p>
-
-</section>
-
-<section id="skills">
-
-<h2 class="section-title">Core Skills</h2>
-
-<div class="card-container">
-
-<div class="card">Kubernetes</div>
-<div class="card">OpenShift</div>
-<div class="card">OpenStack</div>
-<div class="card">AWS</div>
-<div class="card">GCP</div>
-<div class="card">Terraform</div>
-<div class="card">Ansible</div>
-<div class="card">Jenkins</div>
-<div class="card">GitHub Actions</div>
-<div class="card">Prometheus</div>
-<div class="card">Grafana</div>
-<div class="card">Linux Administration</div>
-
-</div>
-
-</section>
-
-<section id="experience">
-
-<h2 class="section-title">Experience</h2>
-
-<div class="timeline">
-
-<div class="job">
-<h3>Vodafone Intelligent Services</h3>
-<p>Lead DevOps Engineer | 2025 - Present</p>
-<p>
-OpenStack migration, OpenShift deployments, KVM virtualization,
-Terraform automation, Grafana observability, production operations.
-</p>
-</div>
-
-<div class="job">
-<h3>Akamai Technologies</h3>
-<p>Cloud Operations Architect</p>
-</div>
-
-<div class="job">
-<h3>Flipkart</h3>
-<p>DevOps Engineer</p>
-<p>
-Managed 18+ Kubernetes clusters with 18,000+ nodes.
-</p>
-</div>
-
-<div class="job">
-<h3>IBM India</h3>
-<p>Infrastructure Specialist</p>
-</div>
-
-<div class="job">
-<h3>Frontier Business Systems</h3>
-<p>DevOps Engineer</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="projects">
-
-<h2 class="section-title">Projects</h2>
-
-<div class="card-container">
-
-<div class="card">
-<h3>OpenStack to OpenShift Migration</h3>
-<p>Migration of workloads from VM-based infrastructure to cloud-native environments.</p>
-</div>
-
-<div class="card">
-<h3>18,000+ Node Kubernetes Platform</h3>
-<p>Large-scale Kubernetes operations and lifecycle management.</p>
-</div>
-
-<div class="card">
-<h3>Enterprise Observability Platform</h3>
-<p>Grafana dashboards, Prometheus alerting, monitoring automation.</p>
-</div>
-
-<div class="card">
-<h3>Infrastructure as Code</h3>
-<p>Terraform and Ansible-based provisioning and automation.</p>
-</div>
+  <div class="section">
+    <div class="sec-label">Contact</div>
+    <div class="contact-row">
+      <a class="contact-link" href="mailto:manohar.shetty507@gmail.com"><i class="ti ti-mail"></i>manohar.shetty507@gmail.com</a>
+      <a class="contact-link" href="https://github.com/Manohar-1305"><i class="ti ti-brand-github"></i>github.com/Manohar-1305</a>
+      <a class="contact-link" href="https://linkedin.com/in/manohar-shetty507"><i class="ti ti-brand-linkedin"></i>linkedin.com/in/manohar-shetty507</a>
+    </div>
+  </div>
 
 </div>
 
-</section>
-
-<section id="certifications">
-
-<h2 class="section-title">Certifications</h2>
-
-<ul>
-<li>Certified Kubernetes Administrator (CKA)</li>
-<li>Certified Kubernetes Security Specialist (CKS)</li>
-<li>Prometheus Certified Associate (PCA)</li>
-<li>AWS Solutions Architect Associate</li>
-<li>Azure AZ-900</li>
-<li>GitOps Certified</li>
-</ul>
-
-</section>
-
-<section id="contact">
-
-<h2 class="section-title">Contact</h2>
-
-<p>Email: manohar.shetty507@gmail.com</p>
-<p>GitHub: https://github.com/Manohar-1305</p>
-<p>LinkedIn: https://linkedin.com/in/manohar-shetty507</p>
-
-</section>
-
-<footer>
-
-<p>© 2026 Manohar Shetty | Lead DevOps Engineer</p>
-
-</footer>
+<footer>© 2026 Manohar Pinnamshetty · Lead DevOps Engineer</footer>
 
 </body>
 </html>
-```
